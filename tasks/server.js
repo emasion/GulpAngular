@@ -1,6 +1,10 @@
 'use strict';
 
+var config = require('../config/gulp.config');
 var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var $$ = $.loadUtils(['colors', 'env', 'log', 'pipeline']);
+var _ = require('lodash');
 
 var browserSync = require('browser-sync');
 
@@ -17,9 +21,7 @@ function browserSyncInit(baseDir, files, browser) {
     },
     browser: browser
   });
-
 }
-
 
 gulp.task('serve', ['watch'], function () {
 	browserSyncInit([TMP_DIR, SRC_DIR], [

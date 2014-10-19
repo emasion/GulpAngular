@@ -17,5 +17,6 @@ gulp.task('dev', ['install'], function(done) {
     'lint',
     ['browserify', 'templates', 'styles'],
     'inject',
+    'serve',
     done);
 });

@@ -9,24 +9,21 @@ var $ = require('gulp-load-plugins')();
 var $$ = $.loadUtils(['colors', 'env', 'log', 'pipeline']);
 var _ = require('lodash');
 
+var wiredep = require('wiredep').stream;
+var saveLicense = require('uglify-save-license');
+
 gulp.task('inject', function () {
   return gulp.src(config.paths.src.html)
     .pipe(wiredep({
-      directory: BOWER_DIR,
-      exclude: [
-        'ionic/css', // unix
-        /ionic\\css/, // windows
-        // 'font-awesome/css',
-        // /font-awesome\\css/,
-      ],
+      directory: BOWER_DIR
     }))
-    .pipe($.preprocess({
-      context: {
-        CORDOVA_PATH: conf.env.cordovaPath,
-        NG_CORDOVA: !_.include(conf.env.tasks, 'build'),
-        MOCKS: conf.env.mocks,
-      }
-    }))
+//    .pipe($.preprocess({
+//      context: {
+//        CORDOVA_PATH: conf.env.cordovaPath,
+//        NG_CORDOVA: !_.include(conf.env.tasks, 'build'),
+//        MOCKS: conf.env.mocks,
+//      }
+//    }))
     .pipe(gulp.dest(TMP_DIR))
     .pipe($.size({ title: 'inject' }))
 });
