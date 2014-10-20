@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/config/gulp.config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tasks/inject.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tasks/scripts.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tasks/server.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tasks/templates.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tasks/watch.js" charset="UTF-8" />
+    <file url="file://D:/kdns3/kbs_mnrc/tasks/server.js" charset="UTF-8" />
+  </component>
 </project>
 
