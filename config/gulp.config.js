@@ -52,25 +52,18 @@ var config = {
       css: ASSETS_DIR + '/styles/**/*.css',
 			fonts: ASSETS_DIR + '/fonts/**/*.*',
       templates: SRC_DIR + '/templates/**/*.html',
-      html: SRC_DIR + '/index.html',
-      vendor: SRC_DIR + '/vendor/**/*.*'
+      html: SRC_DIR + '/index.html'
 		},
 		dest: {
 			scripts: TMP_DIR + '/scripts',
 			styles: TMP_DIR + '/assets/styles',
 			images: BUILD_DIR + '/assets/images',
 			fonts: BUILD_DIR + '/assets/fonts'
-		},
-    tmp: {
-      scripts: TMP_DIR + '/scripts/**/*.js',
-      styles: TMP_DIR + '/assets/styles/*.css',
-      html: TMP_DIR + '/*.html'
-    }
+		}
 	},
 	filenames: {
 		scripts: 'main.js'
-	},
-  ports: {}
+	}
 };
 
 module.exports = config;

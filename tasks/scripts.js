@@ -38,5 +38,21 @@ gulp.task('browserify', ['preprocess:scripts'], function () {
 	//.pipe($.size({ title: 'browserify' }));
 });
 
+gulp.task('templates', function () {
+  return gulp.src(config.paths.src.templates)
+    .pipe($.minifyHtml({
+      empty: true,
+      spare: true,
+      quotes: true
+    }))
+    .pipe($.angularTemplatecache({
+      root: 'templates',
+      module: 'templates',
+      standalone: true
+    }))
+    // .pipe($.header('module.exports = '))
+    .pipe(gulp.dest(config.paths.dest.scripts))
+    .pipe($.size({ title: 'templates' }));
+});
 
 

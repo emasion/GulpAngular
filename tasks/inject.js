@@ -9,15 +9,22 @@ var $ = require('gulp-load-plugins')();
 var $$ = $.loadUtils(['colors', 'env', 'log', 'pipeline']);
 var _ = require('lodash');
 
+var wiredep = require('wiredep').stream;
+var saveLicense = require('uglify-save-license');
 
 gulp.task('inject', function () {
-  var wiredep = require('wiredep').stream;
-
   return gulp.src(config.paths.src.html)
     .pipe(wiredep({
       directory: BOWER_DIR
     }))
+//    .pipe($.preprocess({
+//      context: {
+//        CORDOVA_PATH: conf.env.cordovaPath,
+//        NG_CORDOVA: !_.include(conf.env.tasks, 'build'),
+//        MOCKS: conf.env.mocks,
+//      }
+//    }))
     .pipe(gulp.dest(TMP_DIR))
-    .pipe($.size({ title: 'inject' }));
+    .pipe($.size({ title: 'inject' }))
 });
 
