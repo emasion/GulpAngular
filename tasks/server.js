@@ -7,7 +7,6 @@ var $$ = $.loadUtils(['colors', 'env', 'log', 'pipeline']);
 var _ = require('lodash');
 
 var browserSync = require('browser-sync');
-
 var middleware = require('./proxy');
 
 function browserSyncInit(baseDir, files, browser) {
@@ -25,10 +24,10 @@ function browserSyncInit(baseDir, files, browser) {
 
 gulp.task('serve', ['watch'], function () {
 	browserSyncInit([TMP_DIR, SRC_DIR], [
-		conf.paths.tmp.html,
-		conf.paths.tmp.scripts,
-		conf.paths.tmp.styles,
-		conf.paths.src.vendor
+		config.paths.tmp.html,
+    config.paths.tmp.scripts,
+    config.paths.tmp.styles,
+    config.paths.src.vendor
 	], 'google chrome')
 });
 

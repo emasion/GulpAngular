@@ -7,32 +7,33 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- build:css({.tmp}) assets/styles/vendor.css -->
-    <link rel="stylesheet" href="assets/styles/vendor.css">
+    <!-- build:css(.tmp) assets/styles/main.css -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <!-- endbuild -->
 
+    <!-- build:css(.tmp) assets/styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:css({.tmp}) assets/styles/main.css -->
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <!-- endbuild -->
 
     <!-- build:js scripts/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
-    <!-- build:js scripts/vendor.js -->
+    <!-- build:js scripts/require.js -->
+    <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor.js --> -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({src,.tmp}) scripts/main.js -->
-    <script src="app/angularRequirejs.js"></script>
-
+    <!-- build:js(.tmp) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/templates.js"></script>
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->
     <!-- endinject -->

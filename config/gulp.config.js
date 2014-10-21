@@ -44,22 +44,28 @@ global.AUTOPREFIXER_BROWSERS = [
 var config = {
 	host: host[env.target],
 	paths: {
-		src: {
-			entry: PREPROCESS_DIR + '/scripts/app.js',
-			scripts: SRC_DIR + '/scripts/**/*.js',
-			images: ASSETS_DIR + '/images/**/*.*',
-			styles: ASSETS_DIR + '/styles/**/*.scss',
+    src: {
+      entry: PREPROCESS_DIR + '/scripts/app.js',
+      scripts: SRC_DIR + '/scripts/**/*.js',
+      images: ASSETS_DIR + '/images/**/*.*',
+      styles: ASSETS_DIR + '/styles/**/*.scss',
       css: ASSETS_DIR + '/styles/**/*.css',
-			fonts: ASSETS_DIR + '/fonts/**/*.*',
+      fonts: ASSETS_DIR + '/fonts/**/*.*',
       templates: SRC_DIR + '/templates/**/*.html',
-      html: SRC_DIR + '/index.html'
+      html: SRC_DIR + '/index.html',
+      vendor: SRC_DIR + '/vendor/**/*.js'
+    },
+    dest: {
+      scripts: TMP_DIR + '/scripts',
+      styles: TMP_DIR + '/assets/styles',
+      images: BUILD_DIR + '/assets/images',
+      fonts: BUILD_DIR + '/assets/fonts'
 		},
-		dest: {
-			scripts: TMP_DIR + '/scripts',
-			styles: TMP_DIR + '/assets/styles',
-			images: BUILD_DIR + '/assets/images',
-			fonts: BUILD_DIR + '/assets/fonts'
-		}
+    tmp: {
+      html: TMP_DIR + '/*.html',
+      scripts: TMP_DIR + '/scripts',
+      styles: TMP_DIR + '/assets/styles'
+    }
 	},
 	filenames: {
 		scripts: 'main.js'
